@@ -1,0 +1,5 @@
+- navbar opciones
+- modal consulta saldo
+- modal ingresar monto
+- modal retirar monto
+- boton salir

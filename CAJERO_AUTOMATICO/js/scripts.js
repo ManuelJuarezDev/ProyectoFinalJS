@@ -1,18 +1,21 @@
 var cuentas = [
     { 
         id: 1,
-        nombre:'Mali', 
+        nombre:'Maria Lizeth Lizarraga',
+        usuario:'Mali', 
         contrasena:'M@l¡',
         saldo: 200 
     },
     { 
         id: 2,
-        nombre:'Gera', 
+        nombre:'Gerardo de Jesús Vazquez',
+        usuario:'Gera', 
         contrasena:'gera_007!',
         saldo: 290 },
     { 
         id:3,
-        nombre:'Maui', 
+        nombre:'Martha Urias Inzunza',
+        usuario:'Maui', 
         contrasena:'maui123',
         saldo: 67 
     }

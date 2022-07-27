@@ -21,7 +21,7 @@ form {
     text-align:center;
     padding:0 0 60px;
     font-size:50px;
-    color:rgb(244,71,107);
+    color:#ff3936;
 }
 
 form .form-control {
@@ -37,7 +37,7 @@ form .form-control {
 }
 
 form .btn-primary {
-    background:#f4476b;
+    background:#ff3936;
     border:none;
     border-radius:4px;
     padding:11px;
@@ -48,7 +48,7 @@ form .btn-primary {
 }
 
 form .btn-primary:hover,form .btn-primary:active {
-    background:#eb3b60;
+    background:#f1605e;
 }
 
 form .btn-primary:active {

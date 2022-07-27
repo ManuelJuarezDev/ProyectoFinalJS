@@ -78,7 +78,9 @@
             box-sizing: content-box;
     height: 0;
     overflow: visible; }
-  
+  h1 {
+    color:#ff3936;
+  }
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: 0.5rem; }
@@ -8872,7 +8874,17 @@
       background-color: #181F2C; }
       .dash-nav.dash-nav-dark a {
         color: #fff; }
-  
+
+    .dash-nav.dash-nav-devf {
+      background-color: #ff3936; 
+    }
+    .dash-nav.dash-nav-devf a {
+      color: #fff; 
+    }
+    .dash-nav.dash-nav-devf a:hover {
+      background-color: #eb2f2c;
+      text-decoration: none; 
+    }
   .spur-logo {
     font-family: "Nunito", sans-serif;
     font-weight: bold;
@@ -8890,7 +8902,7 @@
       color: #515151;
       text-decoration: none; }
     .spur-logo i {
-      color: #576177;
+      color: #fff;
       font-size: 27px;
       margin-right: 10px; }
   
@@ -8922,7 +8934,7 @@
       font-size: 19px;
       margin-left: -40px; }
     .dash-nav-dark .dash-nav-item:hover {
-      background: rgba(255, 255, 255, 0.04); }
+      background: #f1605e; }
   
   .dash-nav-dropdown {
     display: -webkit-box;
@@ -9356,4 +9368,6 @@
         opacity: .9; }
   
 
-  
+  .classred{
+    color:#ff3936;
+  }

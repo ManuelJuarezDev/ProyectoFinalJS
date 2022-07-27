@@ -13,9 +13,9 @@
 </head>
 
 <body>
-    <div class="dash ">
+    <div class="dash">
 
-        <div id="modalUsr">
+        <!-- <div id="modalUsr">
             <div id="myModal" class="modal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -30,12 +30,12 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Navegación -->
         <div class="dash-nav dash-nav-dark">
@@ -46,25 +46,25 @@
                 <a href="#" class="spur-logo"><i class="fas fa-landmark"></i> <span>Banco DEVF</span></a>
             </header>
             <nav class="dash-nav-list">
-                <a href="#" class="dash-nav-item">
+                <a href="#" class="dash-nav-item" id="linkInicio">
                     <i class="fas fa-home"></i> Inicio </a>
                 <div class="dash-nav-dropdown">
                     <a href="#" class="dash-nav-item dash-nav-dropdown-toggle" id="movimientos">
                         <i class="fas fa-bars"></i> Movimientos
                     </a>
                     <div class="dash-nav-dropdown-menu">
-                        <a href="#" class="dash-nav-dropdown-item" id="consultarsaldo">
-                            <span> Consultar Saldo</span>
+                        <a href="#" class="dash-nav-dropdown-item" id="linkConsultaSaldo">
+                            <span> Consultar</span>
                         </a>
                     </div>
                     <div class="dash-nav-dropdown-menu">
-                        <a href="#" class="dash-nav-dropdown-item" id="ingresarmonto">
-                            <span> Ingresar Monto</span>
+                        <a href="#" class="dash-nav-dropdown-item" id="linkAbonar">
+                            <span> Abonar</span>
                         </a>
                     </div>
                     <div class="dash-nav-dropdown-menu">
-                        <a href="#" class="dash-nav-dropdown-item" id="retirarmonto">
-                            <span> Retirar Monto</span>
+                        <a href="#" class="dash-nav-dropdown-item" id="linkRetirar">
+                            <span> Retirar </span>
                         </a>
                     </div>
                     <a href="login.html" class="dash-nav-item fixed-bottom" id="cerrarsesion">
@@ -76,7 +76,7 @@
         <!-- Fin Navegación -->
 
         <!-- Contenido Inicio -->
-        <div class="dash-app">
+        <div id="opcInicio" class="dash-app">
             <main class="dash-content">
                 <div class="container-fluid">
 
@@ -97,7 +97,7 @@
                     </div>
 
 
-                    <!-- Movimientos -->
+                    <!-- Movimientos inicio -->
                     <div class="row dash-row">
                         <h4 class="col-xl-12 pb-3">Movimientos recientes:</h4>
                         <div class="col-xl-4">
@@ -157,7 +157,112 @@
             </main>
         </div>
         <!-- Fin Contenido Inicio -->
+        <div id="opcConsultaSaldo" class="dash-app">
+            <main class="dash-content">
+                <div class="container-fluid">
+                    <h1>Consulta</h1>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Cliente:
+                            <span class="badge-pill" id="consultaNomCliente"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Saldo actual:
+                            <span class="badge-pill"  id="consultaSaldoActual">2</span>
+                        </li>
+                    </ul>
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Movimientos</h6>
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Tipo Movimiento</th>
+                                        <th scope="col">Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="consultaTablaMovimientos"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+        <!-- inicio Abonar -->
+        <div id="opcAbonar" class="dash-app">
+            <main class="dash-content">
+                <div class="container-fluid">
+                    <h1>Abonar</h1>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Cliente:
+                            <span class="badge-pill" id="consultaNomCliente"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Saldo actual:
+                            <span class="badge-pill"  id="consultaSaldoActual">2</span>
+                        </li>
+                    </ul>
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Movimientos</h6>
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Tipo Movimiento</th>
+                                        <th scope="col">Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="consultaTablaMovimientos"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!-- Fin Abonar -->
+        <!-- inicio Retirar -->
+        <div id="opcRetirar" class="dash-app">
+            <main class="dash-content">
+                <div class="container-fluid">
+                    <h1>Retirar</h1>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Cliente:
+                            <span class="badge-pill" id="consultaNomCliente"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Saldo actual:
+                            <span class="badge-pill"  id="consultaSaldoActual">2</span>
+                        </li>
+                    </ul>
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Movimientos</h6>
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Tipo Movimiento</th>
+                                        <th scope="col">Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="consultaTablaMovimientos"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!-- Fin Retirar -->
     </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -171,7 +276,10 @@
 
     <script src="../js/sesion.js"></script>
     <script src="../js/cuentas.js"></script>
-    <script src="../js/modulos/main.js"></script>
+    <script src="../js/modulos/inicio.js"></script>
+    <script src="../js/modulos/consultar.js"></script>
+    <script src="../js/modulos/abonar.js"></script>
+    <script src="../js/modulos/retirar.js"></script>
 </body>
 
 </html>

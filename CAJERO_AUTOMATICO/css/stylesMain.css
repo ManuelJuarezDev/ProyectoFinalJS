@@ -8721,6 +8721,11 @@
   
   body {
     background: #E9EDF4; }
+
+  .footerPage{
+    position: absolute;
+    bottom: 20px;
+  }
   
   .dash {
     display: -webkit-box;
@@ -8746,16 +8751,21 @@
     margin-top: 84px; }
     @media (min-width: 992px) {
       .dash-app {
-        margin-left: 238px; }
-        .dash-compact .dash-app {
-          margin-left: 0; } }
+        /* margin-left: 10px;  */
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .dash-compact .dash-app {
+        /* margin-left: 0;  */
+      }
+    }
   
   .dash-content {
     -webkit-box-flex: 2;
     -webkit-flex-grow: 2;
         -ms-flex-positive: 2;
             flex-grow: 2;
-    padding: 25px; }
+    padding: 10px; }
     @media (max-width: 767.98px) {
       .dash-content {
         padding: 15px 0px; } }

@@ -13,109 +13,110 @@
 </head>
 
 <body>
-    <div class="dash">
-        <!-- Navegación -->
-        <div class="dash-nav dash-nav-dark">
-            <header>
-                <a href="#!" class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </a>
-                <a href="#" class="spur-logo" onclick="mostrarOpcion('home')">
-                    <i class="fas fa-landmark"></i> <span>Banco DEVF</span>
-                </a>
-            </header>
-            <nav class="dash-nav-list">
-                <a href="#" class="dash-nav-item" id="linkConsultaSaldo" onclick="mostrarOpcion('saldo')">
-                    <span> Saldo</span>
-                </a>
-                <a href="#" class="dash-nav-item" id="linkAbonar" onclick="mostrarOpcion('abonar')">
-                    <span> Abonar</span>
-                </a>
-                <a href="#" class="dash-nav-item" id="linkRetirar" onclick="mostrarOpcion('retirar')">
-                    <span> Retirar</span>
-                </a>
-                <a href="#" class="dash-nav-item" id="linkRetirar" onclick="_SESION.terminar()">
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand nav-link" href="#" onclick="mostrarOpcion('home')">
+                <i class="fas fa-landmark"></i> <span>Banco DEVF</span></a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="mostrarOpcion('cuenta')">Cuenta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="mostrarOpcion('abonar')">Abonar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="mostrarOpcion('retirar')">Retirar</a>
+                    </li>
+                </ul>
+                <span class="navbar-text px-2">asdasd</span>
+                <button type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="cerrarSesion()">
                     <i class="fas fa-sign-out-alt"></i> Cerrar sesión
-                </a>
-            </nav>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Saldo -->
+    <article id="saldo" class="dash-app dash-content container">
+        <div class="card">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <b>Saldo actual:</b> <span class="badge badge-primary badge-pill py-2 px-4"
+                        id="consultaSaldoActual">$0</span>
+                </li>
+            </ul>
         </div>
-        <!-- Inicio -->
-        <div id="opcInicio" name="vista" class="dash-app">
-            <main class="dash-content">
-                <div class="container-fluid">
-                    <h1 class="dash-title" id="titulo">¡Bienvenido!</h1>
-                </div>
-            </main>
+    </article>
+
+    <!-- Inicio -->
+    <article id="opcInicio" name="vista" class="dash-app dash-content container">
+        <div class="container-fluid">
+            <h3 class="dash-title" id="titulo">¡Bienvenido!</h3>
         </div>
-        <!-- Saldo -->
-        <div id="opcSaldo" name="vista" class="dash-app">
-            <main class="dash-content">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title">Datos:</h1>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Usuario:
-                                <span class="badge-pill" id="consultaUsuario"></span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Nombre:
-                                <span class="badge-pill" id="consultaNombre">$2</span>
-                            </li>
-                        </ul>
+    </article>
+    <!-- Cuenta -->
+    <article id="opcCuenta" name="vista" class="dash-content container">
+        <div class="mt-2 card">
+            <div class="card-body">
+                <p>
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseExample"
+                        aria-expanded="false" aria-controls="collapseExample"> <i class="fas fa-plus"></i>
+                        Información
+                    </button>
+                </p>
+                <ul class="list-group list-group-flush collapse show" id="collapseExample">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Cuenta: <span class="badge-pill" id="consultaCuenta"></span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Nombre: <span class="badge-pill" id="consultaNombre"></span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Usuario: <span class="badge-pill" id="consultaUsuario"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </article>
+    <!-- Abonar -->
+    <article id="opcAbonar" name="vista" class="dash-content container">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">Abonar</h1>
+                <form class="form-inline" id="forumularioAbonar">
+                    <div class="form-group mb-2">
+                        <input type="text" readonly class="form-control-plaintext" value="Monto:">
                     </div>
-                </div>
-                <div class="mt-2 card">
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Saldo actual: <span class="badge badge-primary badge-pill py-2 px-4"
-                                    id="consultaSaldoActual">$0</span>
-                            </li>
-                        </ul>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="number" class="form-control" id="cantidadAbonar" placeholder="$">
                     </div>
-                </div>
-            </main>
+                    <button type="submit" class="btn btn-primary mb-2">Abonar</button>
+                </form>
+            </div>
         </div>
-        <!-- Abonar -->
-        <div id="opcAbonar" name="vista" class="dash-app">
-            <main class="dash-content">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title">Abonar</h1>
-                        <form class="form-inline" id="forumularioAbonar">
-                            <div class="form-group mb-2">
-                                <input type="text" readonly class="form-control-plaintext" value="Monto:">
-                            </div>
-                            <div class="form-group mx-sm-3 mb-2">
-                                <input type="number" class="form-control" id="cantidadAbonar" placeholder="$">
-                            </div>
-                            <button type="submit" class="btn btn-primary mb-2">Abonar</button>
-                        </form>
+    </article>
+    <!-- Retirar -->
+    <article id="opcRetirar" name="vista" class="dash-content container">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">Retirar</h1>
+                <form class="form-inline" id="forumularioRetirar">
+                    <div class="form-group mb-2">
+                        <input type="text" readonly class="form-control-plaintext" value="Monto:">
                     </div>
-                </div>
-            </main>
-        </div>
-        <!-- Retirar -->
-        <div id="opcRetirar" name="vista" class="dash-app">
-            <main class="dash-content">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title">Retirar</h1>
-                        <form class="form-inline" id="forumularioRetirar">
-                            <div class="form-group mb-2">
-                                <input type="text" readonly class="form-control-plaintext" value="Monto:">
-                            </div>
-                            <div class="form-group mx-sm-3 mb-2">
-                                <input type="number" class="form-control" id="cantidadRetirar" placeholder="$">
-                            </div>
-                            <button type="submit" class="btn btn-primary mb-2">Retirar</button>
-                        </form>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="number" class="form-control" id="cantidadRetirar" placeholder="$">
                     </div>
-                </div>
-            </main>
+                    <button type="submit" class="btn btn-primary mb-2">Retirar</button>
+                </form>
+            </div>
         </div>
-    </div>
+    </article>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -126,12 +127,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="../js/templete-js.js"></script>
     <script src="../js/modelos/generales.js"></script>
     <script src="../js/modelos/sesion.js"></script>
     <script src="../js/modelos/cuentas.js"></script>
     <script src="../js/modulos/home.js"></script>
-    <script src="../js/modulos/saldo.js"></script>
+    <script src="../js/modulos/cuenta.js"></script>
     <script src="../js/modulos/abonar.js"></script>
     <script src="../js/modulos/retirar.js"></script>
 </body>

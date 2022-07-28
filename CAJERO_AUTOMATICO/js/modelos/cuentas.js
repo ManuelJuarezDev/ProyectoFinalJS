@@ -5,6 +5,7 @@ const _CUENTAS = {
   data: [
     {
       id: 1,
+      cuenta: 123984324658,
       nombre: 'Maria Lizeth Lizarraga',
       usuario: 'Mali',
       contrasena: '123',
@@ -12,6 +13,7 @@ const _CUENTAS = {
     },
     {
       id: 2,
+      cuenta: 68761354987,
       nombre: 'Gerardo de Jesús Vazquez',
       usuario: 'Gera',
       contrasena: '123',
@@ -19,6 +21,7 @@ const _CUENTAS = {
     },
     {
       id: 3,
+      cuenta: 987613254468,
       nombre: 'Martha Urias Inzunza',
       usuario: 'Maui',
       contrasena: 'maui123',

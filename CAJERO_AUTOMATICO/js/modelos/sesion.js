@@ -10,6 +10,7 @@ const _SESION = {
       ) {
         _SESION.crear(
           cuentas[index].id,
+          cuentas[index].cuenta,
           cuentas[index].usuario,
           cuentas[index].nombre,
         )
@@ -25,7 +26,7 @@ const _SESION = {
   validar: () => {
     let respuesta = null
     const cuentas = _CUENTAS.obtenerCuentas()
-    const sesionUsuario = JSON.parse(window.localStorage.getItem(_SESION.llave))
+    const sesionUsuario = _SESION.obtener()
     if (sesionUsuario && typeof sesionUsuario == 'object') {
       if (sesionUsuario.hasOwnProperty('id'))
         for (let index = 0; index < cuentas.length; index++)
@@ -40,9 +41,10 @@ const _SESION = {
     window.localStorage.removeItem(_SESION.llave)
     window.location.href = './login.html'
   },
-  crear: (id, usuario, nombre) => {
+  crear: (id, cuenta, usuario, nombre) => {
     const sesionUsr = {
       id,
+      cuenta,
       usuario,
       nombre,
     }

@@ -3578,7 +3578,7 @@
     .nav-link:hover, .nav-link:focus {
       text-decoration: none; }
     .nav-link.disabled {
-      color: #6c757d;
+      color: #fff;
       pointer-events: none;
       cursor: default; }
   
@@ -5741,7 +5741,7 @@
     background-color: #dae0e5 !important; }
   
   .bg-dark {
-    background-color: #1E232D !important; }
+    background-color: #414d58 !important; }
   
   a.bg-dark:hover, a.bg-dark:focus,
   button.bg-dark:hover,
@@ -9366,4 +9366,8 @@
         opacity: .9; }
   
 
-  
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none; 
+          margin: 0; 
+        }

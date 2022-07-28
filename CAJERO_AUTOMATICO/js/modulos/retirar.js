@@ -20,6 +20,6 @@ forumularioRetirar.addEventListener('submit', (event) => {
 const _opcRetirar = () => {
   refrescarSaldo()
   document.getElementById('opcRetirar').style.display = 'block'
-  document.getElementById('cantidadRetirar').value = ''
+  cantidadRetirar.value = ''
   cantidadRetirar.focus();
 }

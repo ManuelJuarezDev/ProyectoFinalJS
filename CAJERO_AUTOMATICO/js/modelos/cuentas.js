@@ -78,8 +78,8 @@ const _CUENTAS = {
         JSON.stringify(cuentasUsarios),
       )
     } else {
-      alert(
-        `El movimiento no es posible, ya que se supera el rango entre \$${_CUENTAS.MONTO_MINIMO} y  \$${_CUENTAS.MONTO_MAXIMO}  `,
+      _GENERALES.mensaje(
+        `El movimiento no es posible, ya que estaría superando los rango entre \$${_CUENTAS.MONTO_MINIMO} y  \$${_CUENTAS.MONTO_MAXIMO}  `,
       )
     }
     return respuesta;

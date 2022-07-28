@@ -3,12 +3,10 @@ const mostrarOpcion = (opcion) => {
   if (!_SESION.validar()) {
     _GENERALES.mensaje('Sesión no válida')
     _SESION.terminar()
-    return
+    return false;
   }
   document.getElementById('saldo').style.display = 'block';
-  document.querySelectorAll("article[name='vista']").forEach((item, idx) => {
-    item.style.display = 'none'
-  })
+  document.querySelectorAll("article[name='vista']").forEach((item) => item.style.display = 'none')
   switch (opcion) {
     case 'home':
       _opcHome()
@@ -23,16 +21,17 @@ const mostrarOpcion = (opcion) => {
       _opcRetirar()
       break
     default:
+      _opcHome()
       break
   }
+  return true;
 }
 
 const refrescarSaldo = () => {
-  document.getElementById('consultaSaldoActual').innerHTML = `\$ ${_CUENTAS.obtenerPorID(_SESION.obtener().id).saldo}`;
-}
-
-const cerrarSesion = () => {
-  _SESION.terminar()
+  const _saldo = _CUENTAS.obtenerPorID(_SESION.obtener().id).saldo;
+  const porcentaje = parseInt((_saldo * 100) / _CUENTAS.MONTO_MAXIMO)
+  document.getElementById('consultaSaldoActual').innerHTML = `\$ ${_saldo}`;
+  document.getElementById('limiteCuenta').innerHTML = `${porcentaje} %`;
 }
 
 const _opcHome = () => {

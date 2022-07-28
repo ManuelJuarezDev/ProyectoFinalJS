@@ -34,20 +34,25 @@
                     </li>
                 </ul>
                 <span class="navbar-text px-2">asdasd</span>
-                <button type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="cerrarSesion()">
+                <button type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="_SESION.terminar()">
                     <i class="fas fa-sign-out-alt"></i> Cerrar sesión
                 </button>
             </div>
         </nav>
     </header>
 
+    <div id="memsajeGemeral"></div>
+
     <!-- Saldo -->
     <article id="saldo" class="dash-app dash-content container">
         <div class="card">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <b>Saldo actual:</b> <span class="badge badge-primary badge-pill py-2 px-4"
-                        id="consultaSaldoActual">$0</span>
+                    <b>Saldo:</b>
+                    <span class="badge badge-primary badge-pill py-2 px-4" id="consultaSaldoActual">$0</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Capacidad de saldo:<span class="" id="limiteCuenta">%</span>
                 </li>
             </ul>
         </div>

@@ -52,3 +52,11 @@ const _opcHome = () => {
 }
 
 mostrarOpcion('home')
+
+function change (){
+  if(document.getElementById('icono').className=="fa fa-angle-down"){
+    document.getElementById('icono').className = "fa fa-angle-up";
+  }else{
+    document.getElementById('icono').className = "fa fa-angle-down";
+  }
+}

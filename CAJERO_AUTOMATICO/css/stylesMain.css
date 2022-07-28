@@ -2649,9 +2649,9 @@
     text-decoration: none; }
     .btn-link:hover {
       color: #0458eb;
-      text-decoration: underline; }
+      text-decoration: none; }
     .btn-link:focus, .btn-link.focus {
-      text-decoration: underline;
+      text-decoration: none;
       -webkit-box-shadow: none;
               box-shadow: none; }
     .btn-link:disabled, .btn-link.disabled {

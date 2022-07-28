@@ -10,7 +10,7 @@ forumularioAbonar.addEventListener('submit', (event) => {
     if (_CUENTAS.movimiento(_SESION.obtener().id, monto)) {
       refrescarSaldo()
       _GENERALES.mensaje(
-        `Tu nuevo saldo es: ${_CUENTAS.obtener(_SESION.obtener().id).saldo}`,
+        `Tu nuevo saldo es: \$${_CUENTAS.obtenerPorID(_SESION.obtener().id).saldo}`,
       )
       event.target.cantidadAbonar.value = ''
     }

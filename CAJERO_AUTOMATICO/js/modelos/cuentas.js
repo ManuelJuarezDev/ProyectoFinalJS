@@ -38,11 +38,9 @@ const _CUENTAS = {
   crear: () => {
     window.localStorage.setItem(_CUENTAS.llave, JSON.stringify(_CUENTAS.data))
   },
-  obtener: (id) => {
+  obtenerPorID: (id) => {
     let respuesta = null
-    const cuentasUsarios = JSON.parse(
-      window.localStorage.getItem(_CUENTAS.llave),
-    )
+    const cuentasUsarios = _CUENTAS.obtenerCuentas();
     if (cuentasUsarios && typeof cuentasUsarios == 'object')
       if (cuentasUsarios.length > 0)
         for (let index = 0; index < cuentasUsarios.length; index++)
@@ -60,34 +58,25 @@ const _CUENTAS = {
   eliminar: () => {
     window.localStorage.removeItem(_CUENTAS.llave)
   },
-  reglaNegocio: (monto) => {
-    let respuesta = false
-    if (monto > _CUENTAS.MONTO_MINIMO && monto < _CUENTAS.MONTO_MAXIMO)
-      respuesta = true
-
-    return respuesta
-  },
   movimiento: (id, monto) => {
     let respuesta = false
-    let saldo = _CUENTAS.obtener(id).saldo
+    let saldo = _CUENTAS.obtenerPorID(id).saldo
     const nuevoSaldo = parseInt(saldo) + monto
     if (
       nuevoSaldo >= _CUENTAS.MONTO_MINIMO &&
       nuevoSaldo <= _CUENTAS.MONTO_MAXIMO
     ) {
-      let cuentasUsarios = JSON.parse(
-        window.localStorage.getItem(_CUENTAS.llave),
-      )
+      let cuentasUsarios = _CUENTAS.obtenerCuentas();
       for (let index = 0; index < cuentasUsarios.length; index++) {
         if (cuentasUsarios[index].id == id) {
           cuentasUsarios[index].saldo = nuevoSaldo
+          respuesta = true
         }
       }
       window.localStorage.setItem(
         _CUENTAS.llave,
         JSON.stringify(cuentasUsarios),
       )
-      respuesta = true
     } else {
       alert(
         `El movimiento no es posible, ya que se supera el rango entre \$${_CUENTAS.MONTO_MINIMO} y  \$${_CUENTAS.MONTO_MAXIMO}  `,

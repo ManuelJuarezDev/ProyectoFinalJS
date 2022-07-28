@@ -10,7 +10,7 @@ forumularioRetirar.addEventListener('submit', (event) => {
     if (_CUENTAS.movimiento(_SESION.obtener().id, monto * -1)) {
       refrescarSaldo()
       _GENERALES.mensaje(
-        `Tu nuevo saldo es: ${_CUENTAS.obtener(_SESION.obtener().id).saldo}`,
+        `Tu nuevo saldo es: \$${_CUENTAS.obtenerPorID(_SESION.obtener().id).saldo}`,
       )
       event.target.cantidadRetirar.value = ''
     }

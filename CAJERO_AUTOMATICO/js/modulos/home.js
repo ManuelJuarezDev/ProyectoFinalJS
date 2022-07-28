@@ -28,7 +28,7 @@ const mostrarOpcion = (opcion) => {
 }
 
 const refrescarSaldo = () => {
-  document.getElementById('consultaSaldoActual').innerHTML = `\$ ${_CUENTAS.obtener(_SESION.obtener().id).saldo}`;
+  document.getElementById('consultaSaldoActual').innerHTML = `\$ ${_CUENTAS.obtenerPorID(_SESION.obtener().id).saldo}`;
 }
 
 const cerrarSesion = () => {
